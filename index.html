@@ -1,0 +1,657 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Curso de JavaScript — Explicado Línea a Línea</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+</head>
+<body>
+
+    <!-- ==================== PANTALLA DE LOGIN ==================== -->
+    <div id="login-screen" class="login-screen">
+        <div class="login-card">
+            <div class="login-icon">
+                <i class="fab fa-js-square"></i>
+            </div>
+            <h1>Curso de JavaScript</h1>
+            <p class="login-subtitle">Ingresa la clave de acceso para continuar</p>
+            <form id="login-form">
+                <div class="input-group">
+                    <i class="fas fa-lock"></i>
+                    <input type="password" id="password-input" placeholder="Clave de acceso" autocomplete="off" required>
+                </div>
+                <button type="submit" class="btn btn-login">
+                    <i class="fas fa-sign-in-alt"></i> Ingresar
+                </button>
+                <p id="login-error" class="login-error" hidden>
+                    <i class="fas fa-exclamation-circle"></i> Clave incorrecta. Intenta de nuevo.
+                </p>
+            </form>
+        </div>
+    </div>
+
+    <!-- ==================== CONTENIDO DEL CURSO ==================== -->
+    <div id="app" class="app" hidden>
+
+        <header>
+            <div class="container">
+                <h1><i class="fab fa-js-square"></i> Curso de JavaScript</h1>
+                <p class="subtitle">Aprende JavaScript paso a paso — cada línea de código explicada</p>
+                <button id="logout-btn" class="btn-logout" title="Cerrar sesión">
+                    <i class="fas fa-sign-out-alt"></i>
+                </button>
+            </div>
+        </header>
+
+        <nav>
+            <div class="container">
+                <ul>
+                    <li><a href="#inicio" class="active"><i class="fas fa-home"></i> Inicio</a></li>
+                    <li><a href="#sesion1"><i class="fas fa-play"></i> Sesión 1</a></li>
+                    <li><a href="#sesion2"><i class="fas fa-code-branch"></i> Sesión 2</a></li>
+                    <li><a href="#sesion3"><i class="fas fa-layer-group"></i> Sesión 3</a></li>
+                    <li><a href="#sesion4"><i class="fas fa-window-maximize"></i> Sesión 4</a></li>
+                    <li><a href="#sesion5"><i class="fas fa-rocket"></i> Sesión 5</a></li>
+                </ul>
+            </div>
+        </nav>
+
+        <main class="container">
+
+            <!-- ========== INICIO ========== -->
+            <section id="inicio" class="active">
+                <h2>Bienvenido al Curso de JavaScript</h2>
+                <p>En este curso aprenderás los fundamentos de JavaScript desde cero. Cada ejemplo incluye explicación <strong>línea a línea</strong> para que entiendas exactamente qué hace el código.</p>
+
+                <div class="card-container">
+                    <div class="card">
+                        <i class="fas fa-terminal"></i>
+                        <h3>Sesión 1</h3>
+                        <p>Variables, tipos de datos y <code>console.log</code></p>
+                    </div>
+                    <div class="card">
+                        <i class="fas fa-code-branch"></i>
+                        <h3>Sesión 2</h3>
+                        <p>Condicionales: <code>if</code>, <code>else</code> y <code>switch</code></p>
+                    </div>
+                    <div class="card">
+                        <i class="fas fa-repeat"></i>
+                        <h3>Sesión 3</h3>
+                        <p>Ciclos: <code>for</code>, <code>while</code> y métodos de arrays</p>
+                    </div>
+                    <div class="card">
+                        <i class="fas fa-cube"></i>
+                        <h3>Sesión 4</h3>
+                        <p>Funciones, parámetros y arrow functions</p>
+                    </div>
+                    <div class="card">
+                        <i class="fas fa-window-maximize"></i>
+                        <h3>Sesión 5</h3>
+                        <p>DOM, eventos y proyecto final interactivo</p>
+                    </div>
+                </div>
+
+                <div class="info-box">
+                    <h3><i class="fas fa-info-circle"></i> ¿Cómo usar este curso?</h3>
+                    <ol>
+                        <li>Navega entre sesiones usando el menú superior.</li>
+                        <li>Lee cada bloque de código y su explicación línea a línea.</li>
+                        <li>Copia el código con el botón <i class="far fa-copy"></i> y pruébalo en la consola del navegador (<kbd>F12</kbd>).</li>
+                        <li>Completa los ejercicios al final de cada sesión.</li>
+                    </ol>
+                </div>
+            </section>
+
+            <!-- ========== SESIÓN 1: Variables y Tipos de Datos ========== -->
+            <section id="sesion1">
+                <h2><i class="fas fa-play"></i> Sesión 1 — Variables, Tipos de Datos y console.log</h2>
+                <p>En esta sesión aprenderás a almacenar información en variables, conocer los tipos de datos fundamentales y mostrar resultados en la consola.</p>
+
+                <!-- Bloque 1: console.log -->
+                <div class="code-explained">
+                    <h3>1.1 — Tu primer programa: Hola Mundo</h3>
+                    <pre><code>// Línea 1: Mostramos un mensaje en la consola del navegador
+console.log("¡Hola Mundo!");</code></pre>
+                    <div class="line-explanation">
+                        <div class="line-row">
+                            <span class="line-num">Línea 1</span>
+                            <span class="line-desc"><code>console.log()</code> es una función que imprime mensajes en la consola del navegador. El texto entre comillas es una <strong>cadena de texto</strong> (string).</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Bloque 2: Variables con let -->
+                <div class="code-explained">
+                    <h3>1.2 — Declarar variables con <code>let</code></h3>
+                    <pre><code>// Línea 1: Declaramos una variable llamada "nombre" y le asignamos un texto
+let nombre = "Carlos";
+
+// Línea 2: Declaramos una variable numérica para la edad
+let edad = 17;
+
+// Línea 3: Mostramos las variables usando template literals (backticks)
+console.log(`Mi nombre es ${nombre} y tengo ${edad} años`);</code></pre>
+                    <div class="line-explanation">
+                        <div class="line-row">
+                            <span class="line-num">Línea 1</span>
+                            <span class="line-desc"><code>let</code> declara una variable que puede cambiar de valor. <code>"Carlos"</code> es un <strong>string</strong> (cadena de texto).</span>
+                        </div>
+                        <div class="line-row">
+                            <span class="line-num">Línea 2</span>
+                            <span class="line-desc"><code>17</code> es un <strong>number</strong> (número). JavaScript detecta el tipo automáticamente.</span>
+                        </div>
+                        <div class="line-row">
+                            <span class="line-num">Línea 3</span>
+                            <span class="line-desc">Los <strong>template literals</strong> usan backticks (<code>`</code>) y <code>${variable}</code> para insertar variables dentro del texto.</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Bloque 3: const -->
+                <div class="code-explained">
+                    <h3>1.3 — Constantes con <code>const</code></h3>
+                    <pre><code>// Línea 1: Declaramos una constante (no puede cambiar de valor)
+const PI = 3.14159;
+
+// Línea 2: Declaramos el radio de un círculo
+let radio = 5;
+
+// Línea 3: Calculamos el área del círculo
+let area = PI * radio * radio;
+
+// Línea 4: Mostramos el resultado
+console.log(`El área del círculo es: ${area}`);</code></pre>
+                    <div class="line-explanation">
+                        <div class="line-row">
+                            <span class="line-num">Línea 1</span>
+                            <span class="line-desc"><code>const</code> declara una constante. Si intentas reasignarla (<code>PI = 3</code>), JavaScript mostrará un error.</span>
+                        </div>
+                        <div class="line-row">
+                            <span class="line-num">Línea 2</span>
+                            <span class="line-desc">Usamos <code>let</code> porque el radio podría cambiar en el futuro.</span>
+                        </div>
+                        <div class="line-row">
+                            <span class="line-num">Línea 3</span>
+                            <span class="line-desc">El operador <code>*</code> multiplica valores. La fórmula del área es π × r².</span>
+                        </div>
+                        <div class="line-row">
+                            <span class="line-num">Línea 4</span>
+                            <span class="line-desc">Mostramos el resultado interpolando la variable <code>area</code> en el texto.</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Bloque 4: Tipos de datos -->
+                <div class="code-explained">
+                    <h3>1.4 — Los tipos de datos principales</h3>
+                    <pre><code>// Línea 1: String (cadena de texto)
+let texto = "Hola";
+
+// Línea 2: Number (número entero o decimal)
+let numero = 42;
+
+// Línea 3: Boolean (verdadero o falso)
+let esEstudiante = true;
+
+// Línea 4: Undefined (variable sin valor asignado)
+let sinValor;
+
+// Línea 5: Null (valor vacío intencional)
+let vacio = null;
+
+// Línea 6: typeof nos dice el tipo de dato de una variable
+console.log(typeof texto);         // "string"
+console.log(typeof numero);        // "number"
+console.log(typeof esEstudiante);  // "boolean"
+console.log(typeof sinValor);      // "undefined"</code></pre>
+                    <div class="line-explanation">
+                        <div class="line-row">
+                            <span class="line-num">Línea 1</span>
+                            <span class="line-desc"><strong>String</strong>: texto encerrado en comillas dobles, simples o backticks.</span>
+                        </div>
+                        <div class="line-row">
+                            <span class="line-num">Línea 2</span>
+                            <span class="line-desc"><strong>Number</strong>: cualquier número, ya sea entero (<code>42</code>) o decimal (<code>3.14</code>).</span>
+                        </div>
+                        <div class="line-row">
+                            <span class="line-num">Línea 3</span>
+                            <span class="line-desc"><strong>Boolean</strong>: solo puede ser <code>true</code> o <code>false</code>. Muy usado en condiciones.</span>
+                        </div>
+                        <div class="line-row">
+                            <span class="line-num">Línea 4</span>
+                            <span class="line-desc"><strong>Undefined</strong>: cuando declaras una variable pero no le das valor.</span>
+                        </div>
+                        <div class="line-row">
+                            <span class="line-num">Línea 5</span>
+                            <span class="line-desc"><strong>Null</strong>: representa "nada" o "vacío" de forma intencional.</span>
+                        </div>
+                        <div class="line-row">
+                            <span class="line-num">Línea 6</span>
+                            <span class="line-desc"><code>typeof</code> es un operador que devuelve el tipo de dato como string.</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Bloque 5: Operadores -->
+                <div class="code-explained">
+                    <h3>1.5 — Operadores aritméticos</h3>
+                    <pre><code>// Línea 1: Suma
+let suma = 10 + 5;          // Resultado: 15
+
+// Línea 2: Resta
+let resta = 10 - 3;         // Resultado: 7
+
+// Línea 3: Multiplicación
+let multi = 4 * 3;          // Resultado: 12
+
+// Línea 4: División
+let division = 20 / 4;      // Resultado: 5
+
+// Línea 5: Módulo (residuo de la división)
+let residuo = 10 % 3;       // Resultado: 1
+
+// Línea 6: Exponente (potencia)
+let potencia = 2 ** 3;      // Resultado: 8 (2 elevado a la 3)
+
+// Línea 7: Mostramos todos los resultados
+console.log(suma, resta, multi, division, residuo, potencia);</code></pre>
+                    <div class="line-explanation">
+                        <div class="line-row">
+                            <span class="line-num">Línea 1-4</span>
+                            <span class="line-desc">Operadores básicos: <code>+</code> suma, <code>-</code> resta, <code>*</code> multiplicación, <code>/</code> división.</span>
+                        </div>
+                        <div class="line-row">
+                            <span class="line-num">Línea 5</span>
+                            <span class="line-desc"><code>%</code> devuelve el <strong>residuo</strong>. 10 ÷ 3 = 3 con residuo <strong>1</strong>. Útil para saber si un número es par (<code>n % 2 === 0</code>).</span>
+                        </div>
+                        <div class="line-row">
+                            <span class="line-num">Línea 6</span>
+                            <span class="line-desc"><code>**</code> es el operador de potencia. <code>2 ** 3</code> es lo mismo que 2×2×2 = 8.</span>
+                        </div>
+                        <div class="line-row">
+                            <span class="line-num">Línea 7</span>
+                            <span class="line-desc"><code>console.log()</code> puede recibir múltiples argumentos separados por comas.</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="exercise-box">
+                    <h3><i class="fas fa-pencil-alt"></i> Ejercicio de la Sesión 1</h3>
+                    <p>Crea un programa que calcule el promedio de 3 calificaciones. Usa variables para cada calificación, calcula el promedio y muestra el resultado con <code>console.log()</code>.</p>
+                    <details>
+                        <summary>Ver solución</summary>
+                        <pre><code>let cal1 = 85;
+let cal2 = 92;
+let cal3 = 78;
+let promedio = (cal1 + cal2 + cal3) / 3;
+console.log(`El promedio es: ${promedio.toFixed(2)}`);</code></pre>
+                    </details>
+                </div>
+            </section>
+
+            <!-- ========== SESIÓN 2: Condicionales ========== -->
+            <section id="sesion2">
+                <h2><i class="fas fa-code-branch"></i> Sesión 2 — Condicionales: if, else y switch</h2>
+                <p>Las estructuras condicionales permiten que tu programa tome decisiones. El código se ejecuta solo si se cumple una condición.</p>
+
+                <!-- Bloque 1: if/else básico -->
+                <div class="code-explained">
+                    <h3>2.1 — Estructura <code>if / else</code></h3>
+                    <pre><code>// Línea 1: Definimos la edad del usuario
+let edad = 16;
+
+// Línea 2: Evaluamos si la edad es mayor o igual a 18
+if (edad >= 18) {
+    // Línea 3: Se ejecuta SOLO si la condición es verdadera
+    console.log("Eres mayor de edad");
+} else {
+    // Línea 4: Se ejecuta SOLO si la condición es falsa
+    console.log("Eres menor de edad");
+}</code></pre>
+                    <div class="line-explanation">
+                        <div class="line-row">
+                            <span class="line-num">Línea 1</span>
+                            <span class="line-desc">Creamos la variable <code>edad</code> con valor <code>16</code>.</span>
+                        </div>
+                        <div class="line-row">
+                            <span class="line-num">Línea 2</span>
+                            <span class="line-desc"><code>if</code> evalúa la expresión entre paréntesis. <code>>=</code> significa "mayor o igual que". Si es <code>true</code>, ejecuta el bloque siguiente.</span>
+                        </div>
+                        <div class="line-row">
+                            <span class="line-num">Línea 3</span>
+                            <span class="line-desc">Este código solo se ejecuta si <code>edad >= 18</code> es verdadero.</span>
+                        </div>
+                        <div class="line-row">
+                            <span class="line-num">Línea 4</span>
+                            <span class="line-desc"><code>else</code> captura el caso contrario. Si la condición es falsa, se ejecuta este bloque.</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Bloque 2: else if -->
+                <div class="code-explained">
+                    <h3>2.2 — Múltiples condiciones con <code>else if</code></h3>
+                    <pre><code>// Línea 1: Definimos la calificación
+let calificacion = 85;
+
+// Línea 2: Evaluamos en qué rango cae la calificación
+if (calificacion >= 90) {
+    // Línea 3: Excelente
+    console.log("Calificación: A — Excelente");
+} else if (calificacion >= 80) {
+    // Línea 4: Bueno
+    console.log("Calificación: B — Bueno");
+} else if (calificacion >= 70) {
+    // Línea 5: Regular
+    console.log("Calificación: C — Regular");
+} else {
+    // Línea 6: Reprobado
+    console.log("Calificación: F — Reprobado");
+}</code></pre>
+                    <div class="line-explanation">
+                        <div class="line-row">
+                            <span class="line-num">Línea 1</span>
+                            <span class="line-desc">Almacenamos la calificación como número.</span>
+                        </div>
+                        <div class="line-row">
+                            <span class="line-num">Línea 2</span>
+                            <span class="line-desc">Primero verifica si es ≥ 90. Si no, pasa al siguiente <code>else if</code>.</span>
+                        </div>
+                        <div class="line-row">
+                            <span class="line-num">Línea 3-5</span>
+                            <span class="line-desc">Cada <code>else if</code> se evalúa en orden. Solo se ejecuta el primer bloque cuya condición sea verdadera.</span>
+                        </div>
+                        <div class="line-row">
+                            <span class="line-num">Línea 6</span>
+                            <span class="line-desc">El <code>else</code> final captura cualquier caso no cubierto por las condiciones anteriores.</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Bloque 3: Operadores de comparación -->
+                <div class="code-explained">
+                    <h3>2.3 — Operadores de comparación</h3>
+                    <pre><code>// Línea 1: Igualdad estricta (compara valor Y tipo)
+console.log(5 === 5);      // true
+console.log(5 === "5");    // false (número vs string)
+
+// Línea 2: Igualdad débil (compara solo valor, NO recomendado)
+console.log(5 == "5");     // true (convierte tipos automáticamente)
+
+// Línea 3: Diferente estricto
+console.log(5 !== "5");    // true
+
+// Línea 4: Mayor, menor, mayor/igual, menor/igual
+console.log(10 > 5);      // true
+console.log(3 < 1);       // false
+console.log(5 >= 5);      // true
+console.log(4 <= 3);      // false</code></pre>
+                    <div class="line-explanation">
+                        <div class="line-row">
+                            <span class="line-num">Línea 1</span>
+                            <span class="line-desc"><code>===</code> es la <strong>igualdad estricta</strong>: compara valor y tipo. <strong>Siempre usa esta</strong>.</span>
+                        </div>
+                        <div class="line-row">
+                            <span class="line-num">Línea 2</span>
+                            <span class="line-desc"><code>==</code> convierte tipos antes de comparar. Esto causa errores difíciles de encontrar. Evítalo.</span>
+                        </div>
+                        <div class="line-row">
+                            <span class="line-num">Línea 3</span>
+                            <span class="line-desc"><code>!==</code> verifica que sean <strong>diferentes</strong> en valor o tipo.</span>
+                        </div>
+                        <div class="line-row">
+                            <span class="line-num">Línea 4</span>
+                            <span class="line-desc">Operadores de orden: <code>&gt;</code>, <code>&lt;</code>, <code>&gt;=</code>, <code>&lt;=</code>.</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Bloque 4: Operadores lógicos -->
+                <div class="code-explained">
+                    <h3>2.4 — Operadores lógicos: AND, OR, NOT</h3>
+                    <pre><code>// Línea 1: Definimos dos condiciones
+let edad2 = 20;
+let tieneCredencial = true;
+
+// Línea 2: AND (&&) — ambas condiciones deben ser verdaderas
+if (edad2 >= 18 && tieneCredencial) {
+    console.log("Puede votar");
+}
+
+// Línea 3: OR (||) — al menos una condición debe ser verdadera
+let esFinDeSemana = false;
+let esVacaciones = true;
+if (esFinDeSemana || esVacaciones) {
+    console.log("¡No hay clases!");
+}
+
+// Línea 4: NOT (!) — invierte el valor booleano
+let lloviendo = false;
+if (!lloviendo) {
+    console.log("Podemos salir al patio");
+}</code></pre>
+                    <div class="line-explanation">
+                        <div class="line-row">
+                            <span class="line-num">Línea 1</span>
+                            <span class="line-desc">Preparamos las variables que usaremos en las condiciones.</span>
+                        </div>
+                        <div class="line-row">
+                            <span class="line-num">Línea 2</span>
+                            <span class="line-desc"><code>&&</code> (AND): el bloque se ejecuta solo si <strong>ambas</strong> condiciones son <code>true</code>.</span>
+                        </div>
+                        <div class="line-row">
+                            <span class="line-num">Línea 3</span>
+                            <span class="line-desc"><code>||</code> (OR): el bloque se ejecuta si <strong>al menos una</strong> condición es <code>true</code>.</span>
+                        </div>
+                        <div class="line-row">
+                            <span class="line-num">Línea 4</span>
+                            <span class="line-desc"><code>!</code> (NOT): invierte el valor. Si <code>lloviendo</code> es <code>false</code>, <code>!lloviendo</code> es <code>true</code>.</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Bloque 5: switch -->
+                <div class="code-explained">
+                    <h3>2.5 — Estructura <code>switch</code></h3>
+                    <pre><code>// Línea 1: Definimos el día de la semana (1-7)
+let dia = 3;
+
+// Línea 2: switch compara el valor con cada case
+switch (dia) {
+    case 1:
+        // Línea 3: Si dia es 1
+        console.log("Lunes");
+        break;
+    case 2:
+        console.log("Martes");
+        break;
+    case 3:
+        // Línea 4: dia es 3, así que entra aquí
+        console.log("Miércoles");
+        break;
+    case 4:
+        console.log("Jueves");
+        break;
+    case 5:
+        console.log("Viernes");
+        break;
+    default:
+        // Línea 5: Si ningún case coincide
+        console.log("Fin de semana");
+}</code></pre>
+                    <div class="line-explanation">
+                        <div class="line-row">
+                            <span class="line-num">Línea 1</span>
+                            <span class="line-desc">La variable <code>dia</code> almacena un número que representa el día.</span>
+                        </div>
+                        <div class="line-row">
+                            <span class="line-num">Línea 2</span>
+                            <span class="line-desc"><code>switch</code> compara <code>dia</code> con cada <code>case</code> usando igualdad estricta (<code>===</code>).</span>
+                        </div>
+                        <div class="line-row">
+                            <span class="line-num">Línea 3</span>
+                            <span class="line-desc">Si <code>dia === 1</code>, ejecuta <code>console.log("Lunes")</code>.</span>
+                        </div>
+                        <div class="line-row">
+                            <span class="line-num">Línea 4</span>
+                            <span class="line-desc"><code>break</code> detiene la ejecución. Sin él, seguiría ejecutando los siguientes <code>case</code>.</span>
+                        </div>
+                        <div class="line-row">
+                            <span class="line-num">Línea 5</span>
+                            <span class="line-desc"><code>default</code> funciona como el <code>else</code> del <code>switch</code>: se ejecuta si ningún <code>case</code> coincide.</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="exercise-box">
+                    <h3><i class="fas fa-pencil-alt"></i> Ejercicio de la Sesión 2</h3>
+                    <p>Crea un programa que, dada una temperatura, imprima: "Frío" si es menor a 15, "Templado" si está entre 15 y 25, y "Caliente" si es mayor a 25.</p>
+                    <details>
+                        <summary>Ver solución</summary>
+                        <pre><code>let temperatura = 22;
+
+if (temperatura < 15) {
+    console.log("Frío 🥶");
+} else if (temperatura <= 25) {
+    console.log("Templado 😊");
+} else {
+    console.log("Caliente 🥵");
+}</code></pre>
+                    </details>
+                </div>
+            </section>
+
+            <!-- ========== SESIÓN 3: Ciclos ========== -->
+            <section id="sesion3">
+                <h2><i class="fas fa-repeat"></i> Sesión 3 — Ciclos y Arrays</h2>
+                <p>Los ciclos permiten repetir acciones. Los arrays almacenan listas de elementos. Juntos son una herramienta muy poderosa.</p>
+
+                <!-- Bloque 1: for -->
+                <div class="code-explained">
+                    <h3>3.1 — Ciclo <code>for</code></h3>
+                    <pre><code>// Línea 1: El ciclo for tiene 3 partes: inicio, condición, incremento
+for (let i = 1; i <= 5; i++) {
+    // Línea 2: Este bloque se repite 5 veces
+    console.log(`Vuelta número: ${i}`);
+}
+// Resultado: Vuelta número: 1, 2, 3, 4, 5</code></pre>
+                    <div class="line-explanation">
+                        <div class="line-row">
+                            <span class="line-num">Línea 1</span>
+                            <span class="line-desc"><code>let i = 1</code> → inicia el contador en 1. <code>i &lt;= 5</code> → se repite mientras i sea ≤ 5. <code>i++</code> → suma 1 a i después de cada vuelta.</span>
+                        </div>
+                        <div class="line-row">
+                            <span class="line-num">Línea 2</span>
+                            <span class="line-desc">El bloque entre <code>{}</code> se ejecuta en cada iteración. <code>i</code> cambia de valor en cada vuelta.</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Bloque 2: while -->
+                <div class="code-explained">
+                    <h3>3.2 — Ciclo <code>while</code></h3>
+                    <pre><code>// Línea 1: Iniciamos un contador
+let contador = 0;
+
+// Línea 2: while se repite MIENTRAS la condición sea verdadera
+while (contador < 3) {
+    // Línea 3: Mostramos el valor actual
+    console.log(`Contador: ${contador}`);
+
+    // Línea 4: IMPORTANTE — incrementamos para evitar ciclo infinito
+    contador++;
+}
+// Resultado: Contador: 0, 1, 2</code></pre>
+                    <div class="line-explanation">
+                        <div class="line-row">
+                            <span class="line-num">Línea 1</span>
+                            <span class="line-desc">Declaramos <code>contador</code> fuera del ciclo porque <code>while</code> no tiene sección de inicio.</span>
+                        </div>
+                        <div class="line-row">
+                            <span class="line-num">Línea 2</span>
+                            <span class="line-desc"><code>while</code> verifica la condición <strong>antes</strong> de cada vuelta. Si es <code>false</code> desde el inicio, nunca se ejecuta.</span>
+                        </div>
+                        <div class="line-row">
+                            <span class="line-num">Línea 4</span>
+                            <span class="line-desc"><code>contador++</code> es esencial. Sin esto, <code>contador</code> siempre sería 0 y el ciclo nunca terminaría (<strong>ciclo infinito</strong>).</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Bloque 3: Arrays -->
+                <div class="code-explained">
+                    <h3>3.3 — Arrays (arreglos)</h3>
+                    <pre><code>// Línea 1: Un array almacena múltiples valores en una sola variable
+let frutas = ["Manzana", "Plátano", "Naranja", "Uva"];
+
+// Línea 2: Accedemos a elementos por su índice (empieza en 0)
+console.log(frutas[0]);   // "Manzana"
+console.log(frutas[2]);   // "Naranja"
+
+// Línea 3: .length nos dice cuántos elementos tiene
+console.log(frutas.length); // 4
+
+// Línea 4: Agregamos un elemento al final
+frutas.push("Fresa");
+
+// Línea 5: Eliminamos el último elemento
+frutas.pop();
+
+// Línea 6: Mostramos todo el array
+console.log(frutas);</code></pre>
+                    <div class="line-explanation">
+                        <div class="line-row">
+                            <span class="line-num">Línea 1</span>
+                            <span class="line-desc">Los arrays se crean con corchetes <code>[]</code>. Los elementos se separan con comas.</span>
+                        </div>
+                        <div class="line-row">
+                            <span class="line-num">Línea 2</span>
+                            <span class="line-desc">Los índices empiezan en <strong>0</strong>. El primer elemento es <code>[0]</code>, el segundo <code>[1]</code>, etc.</span>
+                        </div>
+                        <div class="line-row">
+                            <span class="line-num">Línea 3</span>
+                            <span class="line-desc"><code>.length</code> es una propiedad que devuelve la cantidad de elementos.</span>
+                        </div>
+                        <div class="line-row">
+                            <span class="line-num">Línea 4</span>
+                            <span class="line-desc"><code>.push()</code> añade un elemento al <strong>final</strong> del array.</span>
+                        </div>
+                        <div class="line-row">
+                            <span class="line-num">Línea 5</span>
+                            <span class="line-desc"><code>.pop()</code> elimina y devuelve el <strong>último</strong> elemento.</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Bloque 4: Recorrer arrays con for -->
+                <div class="code-explained">
+                    <h3>3.4 — Recorrer un array con <code>for</code></h3>
+                    <pre><code>// Línea 1: Creamos un array de estudiantes
+let estudiantes = ["Ana", "Luis", "María", "Pedro"];
+
+// Línea 2: Recorremos el array con un ciclo for
+for (let i = 0; i < estudiantes.length; i++) {
+    // Línea 3: Mostramos cada estudiante con su número
+    console.log(`${i + 1}. ${estudiantes[i]}`);
+}
+// Resultado: 1. Ana, 2. Luis, 3. María, 4. Pedro</code></pre>
+                    <div class="line-explanation">
+                        <div class="line-row">
+                            <span class="line-num">Línea 1</span>
+                            <span class="line-desc">Array con 4 nombres.</span>
+                        </div>
+                        <div class="line-row">
+                            <span class="line-num">Línea 2</span>
+                            <span class="line-desc">Iniciamos en <code>0</code> (primer índice) y terminamos en <code>length - 1</code> (último índice). Usamos <code>&lt;</code> y no <code>&lt;=</code>.</span>
+                        </div>
+                        <div class="line-row">
+                            <span class="line-num">Línea 3</span>
+                            <span class="line-desc"><code>i + 1</code> muestra el número humano (empezando en 1). <code>estudiantes[i]</code> accede al elemento en la posición <code>i</code>.</span>
+                        </div>
+                      
+
+
+                    </body>
+</html>
