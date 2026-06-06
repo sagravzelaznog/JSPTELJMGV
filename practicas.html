@@ -5,14 +5,24 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Prácticas de JavaScript - Interactivo</title>
     <link rel="stylesheet" href="styles.css">
+    
+    <!-- PWA Settings -->
+    <link rel="manifest" href="manifest.json">
+    <meta name="theme-color" content="#0b0f19">
+    <link rel="apple-touch-icon" href="icon.png">
 </head>
 <body>
-    <header>
-        <h1>📚 Prácticas de JavaScript</h1>
-        <p>Ejecuta y aprende con los ejemplos interactivos</p>
+    <header style="display: flex; justify-content: space-between; align-items: center; padding: 20px; max-width: 1200px; margin: 0 auto;">
+        <div>
+            <h1>📚 Prácticas de JavaScript</h1>
+            <p style="color: var(--text-secondary);">Ejecuta y aprende con los ejemplos interactivos</p>
+        </div>
+        <a href="index.html" class="btn" style="width: auto; padding: 10px 20px; background: rgba(255,255,255,0.1); border: 1px solid var(--glass-border); text-decoration: none; color: white;">
+            Volver al Curso
+        </a>
     </header>
 
-    <main>
+    <main class="container">
         <nav class="practice-nav">
             <button class="nav-btn active" data-practice="1">Variables y Salida</button>
             <button class="nav-btn" data-practice="2">Tipos de Datos</button>
@@ -239,10 +249,20 @@ console.log(`El promedio es: ${promedio.toFixed(2)}`);</code></pre>
         </section>
     </main>
 
-    <footer>
-                <p>&copy; JMGV-PTEL-2026, CURSO DE JS. Todos los derechos reservados.</p>
+    <footer style="text-align: center; margin-top: 60px; padding: 20px; border-top: 1px solid var(--glass-border);">
+                <p style="color: var(--text-secondary);">&copy; JMGV-PTEL-2026, CURSO DE JS. Todos los derechos reservados.</p>
     </footer>
 
-    <script src="script.js"></script>
+    <script src="practicas.js"></script>
+    <script>
+      // Register Service Worker for PWA
+      if ('serviceWorker' in navigator) {
+        window.addEventListener('load', () => {
+          navigator.serviceWorker.register('./sw.js')
+            .then(reg => console.log('Service Worker registered', reg))
+            .catch(err => console.error('Service Worker registration failed', err));
+        });
+      }
+    </script>
 </body>
 </html>
